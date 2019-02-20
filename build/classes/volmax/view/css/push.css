@@ -1,0 +1,17 @@
+*{
+	
+}
+#push{
+	-fx-background-color: #111;
+}
+#button{
+	-fx-background-color: transparent;
+	-fx-text-fill: #388bc2;	
+}
+#button:hover{
+	-fx-text-fill: #bcbcbc;
+}
+#button:pressed{
+	-fx-text-fill: #bcbcbc;
+	-fx-border-color:#bcbcbc;
+}

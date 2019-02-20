@@ -1,0 +1,94 @@
+
+#button{
+	-fx-border-color: #388bc2;
+	-fx-border-insets:50%;
+	-fx-border-radius:50%;
+	-fx-background-color: transparent;
+	-fx-background-radius:50%;
+}
+
+
+#button:hover{
+	-fx-text-fill:#000;
+}
+
+#button:pressed{
+	-fx-border-color:#388bc2;
+}
+
+#barra{
+	-fx-padding: 10px;
+}
+
+
+
+/* VOLUME*/
+
+.slider, .progress-bar {
+   	-fx-background-color:#388bc2;  
+    -fx-background-radius: 5, 5, 5, 5;
+    -fx-padding: -0.4em; 
+    -fx-pref-height: 10;
+    
+}
+.slider .track {
+	-fx-background-color:#111;
+	-fx-pref-height: 7;
+    
+}
+
+.slider:vertical .track {
+    -fx-pref-width:7;
+
+}
+
+.slider .thumb {
+    -fx-pref-height: 14;
+    -fx-pref-width: 14;
+    -fx-background-color:#388bc2;
+}
+
+/*ÍCONES DOS BOTÕES DE PLAY,NEXT,BACK*/
+#icone{
+	-fx-fill: #388bc2;
+}
+
+#icone:hover{
+	-fx-fill: #fff;
+}
+#icone:pressed{
+	-fx-fill:#ccc;
+}
+
+/* CHECKBOX*/
+.check-box .box {
+-fx-background-color: #111;
+-fx-border-color:#388bc2;
+-fx-border-radius:50%; 
+-fx-padding:1px;
+
+}
+
+.check-box:selected .mark {
+
+-fx-background-color: #388bc2;
+
+}
+
+.check-box:selected .box {
+
+}
+
+.progress-bar {	
+}
+.progress-bar > .track {
+	-fx-background-color:#1f1f1f;
+    -fx-background-insets:  0, 1;
+  	-fx-text-box-border: transparent;
+  	-fx-control-inner-background: transparent;
+}
+
+.progress-bar .bar { 
+	-fx-background-color:#388bc2;
+}
+

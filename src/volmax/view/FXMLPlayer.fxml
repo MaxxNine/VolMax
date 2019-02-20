@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="janela" prefHeight="920.0" prefWidth="1280.0" style="-fx-background-color: #000;" styleClass="mainFxmlClass" stylesheets="@css/fxmlplayer.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="volmax.controller.FXMLPlayerController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView id="listaplaylist" fx:id="listaplaylist" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="200.0" stylesheets="@css/listaplaylist.css">
+              <columns>
+                <TableColumn id="pl" fx:id="playlist" editable="false" prefWidth="75.0" sortable="false" text="Playlists" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <VBox id="vbox" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/background.css" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#home" prefHeight="43.0" prefWidth="200.0" stylesheets="@css/button.css" text="Home">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#adicionarMusicas" prefHeight="43.0" prefWidth="200.0" stylesheets="@css/button.css" text="Adicionar Músicas">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#novaPlaylist" prefHeight="43.0" prefWidth="200.0" stylesheets="@css/button.css" text="Nova Playlist">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#recomm" prefHeight="43.0" prefWidth="200.0" stylesheets="@css/button.css" text="Recomendações da Semana">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#ajuda" prefHeight="43.0" prefWidth="200.0" stylesheets="@css/button.css" text="Ajuda">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#sair" prefHeight="43.0" prefWidth="200.0" stylesheets="@css/button.css" text="Sair">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox id="vbox" prefHeight="760.0" prefWidth="220.0" stylesheets="@css/background.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="220.0" text="Equalizador" textAlignment="CENTER" textFill="#388bc2">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </Label>
+            <HBox alignment="CENTER" fillHeight="false" prefHeight="290.0" prefWidth="217.0" style="-fx-background-color: #111;">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="40.0">
+                     <children>
+                        <Slider id="barra" fx:id="sliderL" max="36.0" orientation="VERTICAL" stylesheets="@css/equalizator.css" value="24.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Slider>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="60hz" textAlignment="CENTER" />
+                     </children>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Slider id="barra" fx:id="sliderLM" max="36.0" orientation="VERTICAL" stylesheets="@css/equalizator.css" value="24.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="230hz" textAlignment="CENTER" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Slider id="barra" fx:id="sliderM" max="36.0" orientation="VERTICAL" stylesheets="@css/equalizator.css" value="24.0" />
+                        <Label text="910hz" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Slider id="barra" fx:id="sliderHM" max="36.0" orientation="VERTICAL" stylesheets="@css/equalizator.css" value="24.0" />
+                        <Label text="4khz" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Slider id="barra" fx:id="sliderH" max="36.0" orientation="VERTICAL" stylesheets="@css/equalizator.css" value="24.0" />
+                        <Label text="14khz" />
+                     </children>
+                  </VBox>
+                  <VBox minWidth="40.0" prefHeight="173.0" prefWidth="50.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="30.0" text="12dB" textFill="#515151">
+                           <VBox.margin>
+                              <Insets top="-10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="BOTTOM_RIGHT" text="0dB" textFill="#515151">
+                           <VBox.margin>
+                              <Insets top="22.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="-24dB" textFill="#515151">
+                           <VBox.margin>
+                              <Insets top="55.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox fx:id="boxRecent" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Última Playlist Tocada" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lastplaylist" textFill="#388bc2">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Último Álbum Tocado" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="lastalbum" textFill="#388bc2">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Último Artista Tocado" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="lastartist" textFill="#388bc2">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Última Música Tocada" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="lastsong" textFill="#388bc2">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Playlist Favorita" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="favoriteplaylist" textFill="#388bc2">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Música Favorita" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="favoritesong" textFill="#388bc2" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+         </children></VBox>
+      <VBox fx:id="centro" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" minWidth="860.0" prefHeight="760.0" prefWidth="860.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox fx:id="topo" prefHeight="200.0" prefWidth="860.0">
+               <children>
+                  <VBox fx:id="painel" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+               </children></HBox>
+            <Separator prefWidth="200.0" />
+            <VBox id="push" fx:id="ocult" alignment="CENTER" prefHeight="20.0" prefWidth="860.0" stylesheets="@css/push.css">
+               <children>
+                  <Button id="button" fx:id="ocup" mnemonicParsing="false" onAction="#ampliar" stylesheets="@css/push.css" text="Ocultar Lista" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <HBox fx:id="listaCentro" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <TableView fx:id="list" prefHeight="539.0" prefWidth="880.0" stylesheets="@css/listamusicas.css" HBox.hgrow="ALWAYS">
+                    <columns>
+                        <TableColumn id="addto" fx:id="add" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" styleClass="addto" text="+" />
+                      <TableColumn id="title" fx:id="titulo" prefWidth="328.0" text="Título" />
+                      <TableColumn id="artist" fx:id="artista" prefWidth="307.0" text="Artista" />
+                        <TableColumn id="album" fx:id="album" minWidth="0.0" prefWidth="239.0" text="Álbum" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </HBox>
+         </children></VBox>
+      <HBox alignment="CENTER" layoutX="200.0" layoutY="665.0" prefHeight="200.0" prefWidth="1040.0" style="-fx-background-color: #111;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="220.0">
+         <children>
+            <Pane minWidth="720.0" prefHeight="200.0" prefWidth="860.0" style="-fx-background-color: #111;" stylesheets="@css/capa.css">
+               <children>
+                  <Slider id="volume" fx:id="vol" layoutX="280.0" layoutY="148.0" max="1.0" onMouseClicked="#alterarVolume" onMouseDragged="#alterarVolume" prefHeight="14.0" prefWidth="102.0" stylesheets="@css/botoesplayer.css" value="0.75">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Slider>
+                  <CheckBox id="random" fx:id="random" ellipsisString="" layoutX="553.0" layoutY="145.0" maxHeight="14.0" maxWidth="19.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="19.0" stylesheets="@css/botoesplayer.css" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <Label layoutX="575.0" layoutY="145.0" text="Random Mode" textFill="#5b5b5b">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label id="namesong" fx:id="songName" alignment="CENTER" contentDisplay="CENTER" layoutX="362.0" layoutY="50.0" prefHeight="15.0" prefWidth="200.0" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label id="artist" fx:id="artist" alignment="CENTER" layoutX="362.0" layoutY="74.0" prefHeight="17.0" prefWidth="200.0" textFill="#515151" />
+                  <ProgressBar id="time" fx:id="timesong" blendMode="LIGHTEN" cache="true" layoutX="252.0" layoutY="108.0" maxHeight="10.0" minHeight="10.0" prefWidth="420.0" progress="0.0" snapToPixel="false" style="-fx-accent: #388bc2; -fx-padding: 0.75; -fx-background-color: linear-gradient(to bottom, derive(-fx-accent, -7%), derive(-fx-accent, 0%), derive(-fx-accent, -3%), derive(-fx-accent, -9%) ); -fx-background-radius: 2; -fx-background-insets: 2 2 2 2 2;" stylesheets="@css/botoesplayer.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </ProgressBar>
+                  <Slider id="slider" fx:id="tempo" layoutX="252.0" layoutY="106.0" max="1.0" onMouseClicked="#alterarTempo" onMouseDragged="#alterarTempo" onMousePressed="#alterarTempo" prefHeight="14.0" prefWidth="420.0" stylesheets="@css/player.css" />
+                  <Label fx:id="tempoCorrido" layoutX="218.0" layoutY="105.0" text="0:00" textFill="#388bc2" />
+                  <ImageView id="capa" fx:id="capa" fitHeight="180.0" fitWidth="180.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../../../Pictures/she.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+                  <Button id="button" fx:id="player" alignment="CENTER" layoutX="446.0" layoutY="136.0" lineSpacing="12.0" mnemonicParsing="false" onAction="#play" stylesheets="@css/botoesplayer.css" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Arial Italic" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView id="icone" fx:id="playIco" fill="WHITE" glyphName="PLAY" size="20" wrappingWidth="12.714285850524902" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="button" fx:id="back" alignment="CENTER" layoutX="398.0" layoutY="136.0" lineSpacing="12.0" mnemonicParsing="false" onAction="#musicaAnterior" stylesheets="@css/botoesplayer.css" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Italic" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView id="icone" fill="#fff" glyphName="STEP_BACKWARD" size="20" wrappingWidth="12.714285850524902" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="button" fx:id="next" alignment="CENTER" layoutX="494.0" layoutY="136.0" lineSpacing="12.0" mnemonicParsing="false" onAction="#proximaMusica" stylesheets="@css/botoesplayer.css" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Arial Italic" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView id="icone" fill="WHITE" glyphName="STEP_FORWARD" size="20" wrappingWidth="12.714285850524902" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <FontAwesomeIconView fx:id="volIco" fill="#388bc2" glyphName="VOLUME_UP" layoutX="252.0" layoutY="159.0" onMouseClicked="#trocarVolume" size="20" />
+                  <MediaView id="mediaView" fx:id="mediaView" fitHeight="150.0" fitWidth="150.0" layoutX="29.0" layoutY="31.0" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

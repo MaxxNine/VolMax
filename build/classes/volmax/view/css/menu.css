@@ -1,0 +1,13 @@
+*{
+	-fx-text-alignment:left;
+	}
+#menu #menu-item .label{
+ -fx-text-fill:#515151;
+ 	-fx-font-size: 14;
+ 	-fx-padding: 5 50 0 0;
+ 	-fx-font-weight: bold;
+    -fx-spacing: 10;
+}
+#menu{
+ -fx-background-color:#000;
+}

@@ -1,0 +1,29 @@
+#button{
+	-fx-border-color: #fff;
+	-fx-border-insets:50%;
+	-fx-border-radius:50%;
+	-fx-background-color: #121212;
+	-fx-text-fill:#fff;
+
+}
+
+
+#button:hover{
+	-fx-text-fill:#388bc2;
+}
+
+#button:pressed{
+	-fx-border-color:#388bc2;
+}
+
+#textfield{
+	-fx-border-color: #388bc2;
+	-fx-border-insets:50%;
+	-fx-border-radius:50%;
+	-fx-background-color: #121212;
+	-fx-text-fill:#388bc2;
+}
+
+#textfield:hover{
+	-fx-border-color: #fff;
+}

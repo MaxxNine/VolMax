@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<fx:root fx:id="home" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="880.0" style="-fx-background-color: #121212;" type="VBox" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="880.0" style="-fx-background-color: #121212;" stylesheets="@css/scrollpanel.css" VBox.vgrow="ALWAYS">
+         <content>
+            <TextFlow lineSpacing="1.5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="880.0" textAlignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="880.0" text="Manual de Uso" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="&#10;Home&#10;&#10;A página Home faz uma busca automática da letra da música em andamento.&#10;&#10;&#10;Adicionar Música&#10;&#10;A página Adicionar Música apenas adiciona músicas à lista de reprodução atual, não tendo interferência direta na PlayList selecionada.&#10;&#10;&#10;Nova Playlist&#10;&#10;A página Nova Playlist possui o intuito de disponibilizar a criação de novas playlists que podem ser alteradas ou excluídas posteriormente.&#10;&#10;&#10;Recomendações da Semana&#10;&#10;A página Recomendações da Semana traz um combo das músicas, álbuns e artistas mais tocados da semana.&#10;&#10;&#10;Preferências&#10;&#10;A página Preferências lhe permite fazer alterações, importações e exportações em seu aplicativo.&#10;&#10;&#10;Ajuda&#10;&#10;Agradecemos por você utilizar nossos serviços! :)&#10;" textAlignment="CENTER" wrappingWidth="743.154296875" />
+               </children>
+            </TextFlow>
+         </content>
+      </ScrollPane>
+   </children>
+</fx:root>
